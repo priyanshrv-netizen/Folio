@@ -1,0 +1,315 @@
+.app-shell .inspector,
+.inspector[aria-label='Design inspector'] {
+  width: 280px;
+  background: var(--editor-panel);
+  color: var(--editor-text);
+  font-size: 12px;
+  line-height: 16px;
+  scrollbar-width: none;
+}
+.inspector > * {
+  flex-shrink: 0;
+}
+.inspector .inspector-section {
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+}
+.inspector .inspector-section > summary,
+.inspector .page-section > .section-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--editor-text);
+  list-style: none;
+  cursor: pointer;
+}
+.inspector .page-section > .section-heading {
+  cursor: default;
+}
+.inspector .page-section strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.inspector .inspector-section > summary::-webkit-details-marker {
+  display: none;
+}
+.inspector .inspector-section > summary:hover {
+  background: var(--editor-field);
+}
+.inspector .section-chevron {
+  margin-left: auto;
+  color: var(--editor-muted);
+  transition: transform 100ms ease;
+}
+.inspector .inspector-section:not([open]) .section-chevron {
+  transform: rotate(-90deg);
+}
+.inspector .inspector-section-actions {
+  display: flex;
+  margin-left: auto;
+}
+.inspector .inspector-section-actions + .section-chevron {
+  margin-left: 0;
+}
+.inspector .inspector-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 12px 12px;
+}
+.inspector .field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.inspector .geometry-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.inspector .geometry-grid .number-field:last-child {
+  grid-column: auto;
+  grid-row: auto;
+}
+.inspector .geometry-grid .number-field:last-child > span {
+  font-size: 12px;
+}
+.inspector .geometry-grid .number-field:last-child > span::after {
+  content: none;
+}
+.inspector[aria-label='Design inspector'] .number-field,
+.inspector[aria-label='Design inspector'] .color-field,
+.inspector .inspector-section select,
+.inspector .layer-name-input,
+.inspector .text-content {
+  min-width: 0;
+  height: 24px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--editor-field);
+  color: var(--editor-text);
+  font-size: 12px;
+  line-height: 16px;
+}
+.inspector .number-field {
+  gap: 3px;
+  padding: 0 5px;
+}
+.inspector[aria-label='Design inspector'] .inspector-section-body .number-field > span {
+  display: flex;
+  align-items: center;
+  color: var(--editor-muted);
+  font-size: 12px;
+}
+.inspector .number-field > span:empty {
+  display: none;
+}
+.inspector .number-field input {
+  height: 22px;
+  padding: 0;
+  color: var(--editor-text);
+  font-size: 12px;
+  background: transparent;
+  appearance: textfield;
+}
+.inspector .number-field input::-webkit-inner-spin-button,
+.inspector .number-field input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.inspector .number-field .field-suffix {
+  margin-left: auto;
+}
+.inspector .dimension-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.inspector .inspector-section select {
+  width: 100%;
+  padding: 0 5px;
+}
+.inspector .dimension-field select {
+  color: var(--editor-muted);
+}
+.inspector .checkbox-row {
+  height: 24px;
+  margin: 0;
+  font-size: 12px;
+  color: var(--editor-text);
+}
+.inspector .checkbox-row input {
+  accent-color: var(--editor-muted);
+}
+.inspector .icon-button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: var(--editor-muted);
+}
+.inspector .icon-button svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 1.5;
+}
+.inspector .flex-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: var(--editor-text);
+}
+.inspector .flex-controls {
+  display: flex;
+  gap: 8px;
+}
+.inspector .flex-alignment-grid {
+  flex: 0 0 72px;
+  height: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--editor-field);
+}
+.inspector .flex-alignment-grid button {
+  padding: 0;
+  border-radius: 2px;
+  color: var(--editor-muted);
+}
+.inspector .flex-alignment-grid button span {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.inspector .flex-alignment-grid button[aria-pressed='true'] {
+  color: var(--editor-text);
+  background: var(--editor-panel);
+}
+.inspector .flex-alignment-grid button[aria-pressed='true'] span {
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+}
+.inspector .flex-main-controls {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.inspector .segmented-control,
+.inspector .fill-type-switch {
+  display: flex;
+  height: 24px;
+  padding: 1px;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--editor-field);
+}
+.inspector .segmented-control button,
+.inspector .fill-type-switch button {
+  flex: 1;
+  height: 20px;
+  padding: 0 5px;
+  color: var(--editor-muted);
+  font-size: 12px;
+}
+.inspector .segmented-control button.active,
+.inspector .fill-type-switch button.active {
+  background: var(--editor-panel);
+  color: var(--editor-text);
+  box-shadow: none;
+}
+.inspector .radius-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 80px;
+  align-items: center;
+  gap: 8px;
+}
+.inspector .radius-control input[type='range'] {
+  width: 100%;
+  min-width: 0;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--editor-muted);
+  background: transparent;
+}
+.inspector .color-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 5px;
+  margin: 0;
+}
+.inspector .swatch-input {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid color-mix(in srgb, var(--editor-muted) 40%, transparent);
+}
+.inspector .color-field > input {
+  height: 22px;
+  color: var(--editor-text);
+  background: transparent;
+}
+.inspector .color-field > span {
+  padding: 0;
+  border: 0;
+  color: var(--editor-muted);
+  font-size: 12px;
+}
+.inspector .filter-fields {
+  grid-template-columns: minmax(0, 1fr);
+}
+.inspector .filter-fields .number-field > span:first-child {
+  min-width: 80px;
+}
+.inspector .text-content {
+  height: auto;
+  min-height: 70px;
+  margin: 0;
+  padding: 5px;
+}
+.inspector .selection-count,
+.inspector .shader-hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--editor-muted);
+}
+.inspector .action-grid {
+  gap: 8px;
+}
+.inspector .action-grid button,
+.inspector .panel-command {
+  height: 24px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--editor-field);
+  color: var(--editor-text);
+  font-size: 12px;
+}
+.inspector .panel-command {
+  width: 100%;
+  min-height: 24px;
+  justify-content: center;
+  margin: 0;
+  padding: 0 8px;
+  font-weight: 500;
+}
+.inspector button:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--editor-field) 80%, var(--editor-text) 8%);
+}

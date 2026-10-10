@@ -1,0 +1,50 @@
+.canvas-overlays {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  --canvas-outline: #4d94ff;
+  --inverse-zoom: 1;
+}
+
+.canvas-world .design-node.frame {
+  box-shadow: none;
+}
+
+.canvas-hover-outline,
+.canvas-child-outline,
+.canvas-artboard-overlay,
+.canvas-overlays .selection-overlay {
+  position: absolute;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+.canvas-hover-outline {
+  outline: 1px solid var(--canvas-outline);
+}
+
+.canvas-child-outline {
+  outline: 1px dashed var(--canvas-outline);
+}
+
+.canvas-overlays .selection-ring,
+.canvas-overlays .resize-handle {
+  border-color: var(--canvas-outline);
+}
+
+.selection-dimensions {
+  position: absolute;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  padding: 2px 6px;
+  background: var(--canvas-outline);
+  color: #fff;
+  font:
+    500 11px / 16px Inter,
+    Arial,
+    sans-serif;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  pointer-events: none;
+}

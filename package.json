@@ -1,0 +1,56 @@
+{
+  "name": "folio-studio",
+  "productName": "Folio",
+  "version": "0.1.0",
+  "description": "An independent, open-source, local-first design editor with editable layouts, Paper Shaders, and a local MCP server.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/priyanshrv-netizen/Folio.git"
+  },
+  "homepage": "https://github.com/priyanshrv-netizen/Folio#readme",
+  "bugs": {
+    "url": "https://github.com/priyanshrv-netizen/Folio/issues"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "main": "desktop/main.mjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "desktop": "npm run build && electron .",
+    "desktop:dev": "concurrently -k \"npm run dev\" \"wait-on http://127.0.0.1:5173 && electron . --dev\"",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "test:e2e": "npm run build && playwright test",
+    "preview": "vite preview --host 127.0.0.1",
+    "mcp": "node desktop/mcp/stdio.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1149.0",
+    "@fontsource/inter": "^5.3.0",
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@paper-design/shaders": "0.0.81",
+    "lucide-react": "^1.55.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.6",
+    "electron": "^44.7.0",
+    "prettier": "^3.9.10",
+    "rolldown": "^1.2.13",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vitest": "^4.1.11",
+    "wait-on": "^9.5.1"
+  }
+}
